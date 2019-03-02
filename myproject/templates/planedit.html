@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include "planmennu.html" %}
+<h3>修改信息</h3>
+            <form action="{% url 'planupdateusers' %}" method="post">
+            <input type="hidden" name="id" value="{{ scjh.id}}"/>
+            {% csrf_token %}
+            <table width="1980" border="1">
+               <tr>
+                 <td>鞋号大小：</td>
+                 <td><input type="text" name="num" value="{{ scjh.num }}"/></td>
+               </tr>
+               <tr>
+                 <td>鞋子种类：</td>
+                 <td><input type="text" name="goods"  value="{{ scjh.goods}}"/></td>
+               </tr>
+                <tr>
+                 <td>生产负责人：</td>
+                 <td><input type="text" name="leader"  value="{{ scjh.leader}}"/></td>
+               </tr>
+                <tr>
+                 <td>生产个数：</td>
+                 <td><input type="text" name="amount"  value="{{ scjh.amount}}"/></td>
+               </tr>
+                <tr>
+                 <td>需求个数：</td>
+                 <td><input type="text" name="need"  value="{{ scjh.need}}"/></td>
+               </tr>
+                <tr>
+                 <td>开工日期：</td>
+                 <td><input type="text" name="kdate"  value="{{ scjh.kdate}}"/></td>
+               </tr>
+                <tr>
+                 <td>完工日期：</td>
+                 <td><input type="text" name="wdate"  value="{{ sjh.wdate}}"/></td>
+               </tr>
+               <tr>
+                 <td colspan="2" align="center">
+                    <input type="submit" value="提交"/>
+                    <input type="reset" value="重置"/>
+                 </td>
+               </tr>
+            </table>
+            </form>
+
+</body>
+</html>

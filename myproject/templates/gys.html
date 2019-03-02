@@ -1,0 +1,43 @@
+
+{% extends "index.html" %}
+
+{% block mainbody %}
+
+
+
+<!-- MainForm -->
+<div id="MainForm">
+<div class="form_boxA">
+<h2>供应商管理</h2>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<th>供应商编号</th>
+<th>供应商名称</th>
+<th>联系电话</th>
+<th>供应商类别</th>
+<th>所在区域</th>
+<th>优质级别</th>
+ <th>操作</th>
+</tr>
+    {% for g in gy %}
+    <tr>
+        <td>{{ g.id }}</td>
+        <td>{{ g.name }}</td>
+        <td>{{ g.namejc }}</td>
+        <td>{{ g.kind }}</td>
+        <td>{{ g.area }}</td>
+        <td>{{ g.rank }}</td>
+        <td>
+            <a href="{% url 'gysdelusers' g.id%}">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+
+</table>
+
+</div>
+</div>
+<!-- /MainForm -->
+
+{% endblock %}

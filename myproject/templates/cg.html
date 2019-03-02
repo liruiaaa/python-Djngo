@@ -1,0 +1,44 @@
+
+{% extends "index.html" %}
+
+{% block mainbody %}
+    {% include "cgmenu.html" %}
+
+
+<!-- MainForm -->
+<div id="MainForm">
+<div class="form_boxA">
+<h2>采购清单</h2>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<th>采购清单号</th>
+<th>采购材料种类</th>
+<th>现有材料（/平方米）</th>
+<th>还需材料（/平方米）</th>
+<th>预计采购成本（元）</th>
+<th>供应商</th>
+<th>操作</th>
+</tr>
+    {% for s in stu %}
+    <tr>
+        <td>{{ s.id }}</td>
+        <td>{{ s.clname }}</td>
+        <td>{{ s.amount}}</td>
+        <td>{{ s.need }}</td>
+        <td>{{ s.money }}</td>
+        <td>{{ s.gys }}</td>
+        <td>
+            <a href="{% url 'cgeditusers' s.id %}">编辑</a>
+            <a href="{% url 'cgdelusers' s.id%}">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+
+</table>
+
+</div>
+</div>
+<!-- /MainForm -->
+
+{% endblock %}

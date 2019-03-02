@@ -1,0 +1,47 @@
+{% extends "index.html" %}
+
+{% block mainbody %}
+	<h2>
+		供应商管理
+	</h2>
+	<form id="edit-profile" action="{% url 'gysinsertusers' %}" class="form-horizontal" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>供应商信息</legend>
+            <div class="control-group">
+                <label class="control-label" for="input01">供应商名称：</label>
+                <div class="controls">
+                    <input type="text" name="name" class="input-xlarge" id="input01"  />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">联系电话：</label>
+                <div class="controls">
+                    <input type="text" name="namejc" class="input-xlarge" id="input01"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">供应商类别：</label>
+                <div class="controls">
+                    <input type="radio" name="kind" class="input-xlarge" id="input01" value="1" /> 本地供应商
+                    <input type="radio" name="kind" class="input-xlarge" id="input01" value="0" /> 外地供应商
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">所在区域：</label>
+                <div class="controls">
+                    <input type="text" name="area" class="input-xlarge" id="input01"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">优质级别：</label>
+                <div class="controls">
+                    <input type="text" name="rank" class="input-xlarge" id="input01"/>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">添加</button> <button type="reset" class="btn">重置</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "index.html" %}
+
+{% block mainbody %}
+	<h2>
+		库存清单
+	</h2>
+	<form id="edit-profile" action="{% url 'kcinsertusers' %}" class="form-horizontal" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>库存信息</legend>
+            <div class="control-group">
+                <label class="control-label" for="input01">鞋子种类名称：</label>
+                <div class="controls">
+                    <input type="text" name="name" class="input-xlarge" id="input01"  />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">鞋子成品数量：</label>
+                <div class="controls">
+                    <input type="text" name="sl" class="input-xlarge" id="input01"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">鞋子颜色：</label>
+                <div class="controls">
+                    <input type="text" name="color" class="input-xlarge" id="input01"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">鞋子型号：</label>
+                <div class="controls">
+                    <input type="text" name="xh" class="input-xlarge" id="input01"/>
+                </div>
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">添加</button> <button type="reset" class="btn">重置</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

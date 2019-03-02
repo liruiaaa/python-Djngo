@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% include "zjmenu.html" %}
+<h3>添加审批</h3>
+            <form action="{% url 'zjinsertusers'  %}" method="post">
+            {% csrf_token %}
+            <table width="1980" border="1">
+               <tr>
+                 <td>资金用途：</td>
+                 <td><input type="text" name="ddqx"/></td>
+               </tr>
+               <tr>
+                 <td>申请人：</td>
+                 <td><input type="text" name="sqr"/></td>
+               </tr>
+                <tr>
+                 <td>所属部门：</td>
+                 <td><input type="text" name="ssbm"/></td>
+               </tr>
+                <tr>
+                 <td>申请日期：</td>
+                 <td><input type="text" name="sqrq"/></td>
+               </tr>
+                <tr>
+                 <td>是否同意：</td>
+                 <td><input type="text" name="sfty"/></td>
+               </tr>
+
+
+               <tr>
+                 <td colspan="2" align="center">
+                    <input type="submit" value="添加"/>
+                    <input type="reset" value="重置"/>
+                 </td>
+               </tr>
+            </table>
+            </form>
+
+</body>
+</html>

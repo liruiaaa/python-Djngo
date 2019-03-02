@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include "zjmenu.html" %}
+<h3>修改审批</h3>
+            <form action="{% url 'zjupdateusers' %}" method="post">
+            <input type="hidden" name="id" value="{{ zj.id}}"/>
+            {% csrf_token %}
+            <table width="1980" border="1">
+               <tr>
+                 <td>资金用途：</td>
+                 <td><input type="text" name="ddqx" value="{{ zj.ddqx }}"/></td>
+               </tr>
+               <tr>
+                 <td>申请人：</td>
+                 <td><input type="text" name="sqr"  value="{{ zj.sqr}}"/></td>
+               </tr>
+                <tr>
+                 <td>所属部门：</td>
+                 <td><input type="text" name="ssbm"  value="{{ zj.ssbm}}"/></td>
+               </tr>
+                <tr>
+                 <td>申请日期：</td>
+                 <td><input type="text" name="sqrq"  value="{{ zj.sqrq}}"/></td>
+               </tr>
+                <tr>
+                 <td>是否同意：</td>
+                 <td><input type="text" name="sfty"  value="{{ zj.sfty}}"/></td>
+               </tr>
+               <tr>
+                 <td colspan="2" align="center">
+                    <input type="submit" value="提交"/>
+                    <input type="reset" value="重置"/>
+                 </td>
+               </tr>
+            </table>
+            </form>
+
+</body>
+</html>

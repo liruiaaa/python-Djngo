@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include "cgmenu.html" %}
+<h3>修改采购清单</h3>
+            <form action="{% url 'cgupdateusers' %}" method="post">
+            <input type="hidden" name="id" value="{{ cg.id}}"/>
+            {% csrf_token %}
+            <table width="1980" border="1">
+               <tr>
+                 <td>材料名称：</td>
+                 <td><input type="text" name="clname" value="{{ cg.clname }}"/></td>
+               </tr>
+               <tr>
+                 <td>已有材料：</td>
+                 <td><input type="text" name="amount"  value="{{ cg.amount }}"/></td>
+               </tr>
+                <tr>
+                 <td>还需材料：</td>
+                 <td><input type="text" name="need"  value="{{ cg.need }}"/></td>
+               </tr>
+                <tr>
+                 <td>采购成本：</td>
+                 <td><input type="text" name="money"  value="{{ cg.money }}"/></td>
+               </tr>
+                <tr>
+                 <td>供应商：</td>
+                 <td><input type="text" name="gys"  value="{{ cg.gys }}"/></td>
+               </tr>
+               <tr>
+                 <td colspan="2" align="center">
+                    <input type="submit" value="提交"/>
+                    <input type="reset" value="重置"/>
+                 </td>
+               </tr>
+            </table>
+            </form>
+
+</body>
+</html>

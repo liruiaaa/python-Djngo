@@ -1,0 +1,43 @@
+
+{% extends "index.html" %}
+
+{% block mainbody %}
+
+
+
+<!-- MainForm -->
+<div id="MainForm">
+<div class="form_boxA">
+<h2>退货信息</h2>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<th>退货单编号</th>
+<th>退货单位</th>
+<th>退货种类</th>
+<th>退货数量</th>
+<th>退货原因</th>
+<th>退货日期</th>
+ <th>操作</th>
+</tr>
+    {% for g in th %}
+    <tr>
+        <td>{{ g.id }}</td>
+        <td>{{ g.thr }}</td>
+        <td>{{ g.thzl }}</td>
+        <td>{{ g.thsl }}</td>
+        <td>{{ g.thyy }}</td>
+        <td>{{ g.thrq }}</td>
+        <td>
+            <a href="{% url 'thdelusers' g.id%}">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+
+</table>
+
+</div>
+</div>
+<!-- /MainForm -->
+
+{% endblock %}

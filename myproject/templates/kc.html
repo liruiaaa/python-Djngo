@@ -1,0 +1,41 @@
+
+{% extends "index.html" %}
+
+{% block mainbody %}
+
+
+
+<!-- MainForm -->
+<div id="MainForm">
+<div class="form_boxA">
+<h2>库存清单</h2>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<th>物品编号</th>
+<th>鞋子种类名称</th>
+<th>现有鞋子成品数量</th>
+<th>鞋子颜色</th>
+<th>鞋子型号</th>
+ <th>操作</th>
+</tr>
+    {% for g in kc %}
+    <tr>
+        <td>{{ g.id }}</td>
+        <td>{{ g.name }}</td>
+        <td>{{ g.sl }}</td>
+        <td>{{ g.color}}</td>
+        <td>{{ g.xh }}</td>
+        <td>
+            <a href="{% url 'kcdelusers' g.id%}">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+
+</table>
+
+</div>
+</div>
+<!-- /MainForm -->
+
+{% endblock %}

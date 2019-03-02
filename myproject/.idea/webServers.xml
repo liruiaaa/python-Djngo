@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="66cb9ded-d952-46e3-ba31-6cb606ba79b7" name="li" url="http://43.226.35.194">
+        <fileTransfer host="43.226.35.194" port="22" rootFolder="/NyDjango/farm" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

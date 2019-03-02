@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include "pickmenu.html" %}
+<h3>修改信息</h3>
+            <form action="{% url 'pickupdateusers' %}" method="post">
+            <input type="hidden" name="id" value="{{ pick.id}}"/>
+            {% csrf_token %}
+            <table width="1980" border="1">
+               <tr>
+                 <td>领料种类：</td>
+                 <td><input type="text" name="name" value="{{ pick.name }}"/></td>
+               </tr>
+               <tr>
+                 <td>领料颜色：</td>
+                 <td><input type="text" name="goods"  value="{{ pick.color}}"/></td>
+               </tr>
+                <tr>
+                 <td>领料材质：</td>
+                 <td><input type="text" name="leader"  value="{{ pick.texture}}"/></td>
+               </tr>
+                <tr>
+                 <td>需求数量：</td>
+                 <td><input type="text" name="amount"  value="{{ pick.amount}}"/></td>
+               </tr>
+                <tr>
+                 <td>计划供料日期：</td>
+                 <td><input type="text" name="kdate"  value="{{ pick.gdate}}"/></td>
+               </tr>
+               <tr>
+                 <td colspan="2" align="center">
+                    <input type="submit" value="提交"/>
+                    <input type="reset" value="重置"/>
+                 </td>
+               </tr>
+            </table>
+            </form>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+
+{% extends "index.html" %}
+
+{% block mainbody %}
+
+
+
+<!-- MainForm -->
+<div id="MainForm">
+<div class="form_boxA">
+<h2>销售管理</h2>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<th>销售订单编号</th>
+<th>客户名称</th>
+<th>应付金额</th>
+<th>已回收金额</th>
+<th>发货情况</th>
+<th>订单日期</th>
+ <th>操作</th>
+</tr>
+    {% for g in xs %}
+    <tr>
+        <td>{{ g.id }}</td>
+        <td>{{ g.kehu }}</td>
+        <td>{{ g.ymoney }}</td>
+        <td>{{ g.hmoney }}</td>
+        <td>{{ g.fh }}</td>
+        <td>{{ g.ddate }}</td>
+        <td>
+            <a href="{% url 'xsdelusers' g.id%}">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+
+</table>
+
+</div>
+</div>
+<!-- /MainForm -->
+
+{% endblock %}

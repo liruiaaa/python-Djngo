@@ -1,0 +1,45 @@
+
+{% extends "index.html" %}
+
+{% block mainbody %}
+
+
+
+<!-- MainForm -->
+<div id="MainForm">
+<div class="form_boxA">
+<h2>入库信息</h2>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<th>入库单编号</th>
+<th>入库种类</th>
+<th>验货人员</th>
+<th>交货人员</th>
+<th>入库人员</th>
+<th>入库数量</th>
+<th>入库时间</th>
+ <th>操作</th>
+</tr>
+    {% for g in rk %}
+    <tr>
+        <td>{{ g.id }}</td>
+        <td>{{ g.kind }}</td>
+        <td>{{ g.jhr }}</td>
+        <td>{{ g.yhr }}</td>
+        <td>{{ g.rkr }}</td>
+        <td>{{ g.rkamount }}</td>
+        <td>{{ g.rkdate }}</td>
+        <td>
+            <a href="{% url 'rkdelusers' g.id%}">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+
+</table>
+
+</div>
+</div>
+<!-- /MainForm -->
+
+{% endblock %}

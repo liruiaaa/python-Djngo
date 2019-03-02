@@ -1,0 +1,49 @@
+{% extends "index.html" %}
+
+{% block mainbody %}
+	<h2>
+		销售管理
+	</h2>
+	<form id="edit-profile" action="{% url 'xsinsertusers' %}" class="form-horizontal" method="post">
+        {% csrf_token %}
+        <fieldset>
+            <legend>销售订单</legend>
+            <div class="control-group">
+                <label class="control-label" for="input01">客户名称：</label>
+                <div class="controls">
+                    <input type="text" name="kehu" class="input-xlarge" id="input01"  />
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">应付金额：</label>
+                <div class="controls">
+                    <input type="text" name="ymoney" class="input-xlarge" id="input01"/>
+                </div>
+            </div>
+             <div class="control-group">
+                <label class="control-label" for="input01">回收金额：</label>
+                <div class="controls">
+                    <input type="text" name="hmoney" class="input-xlarge" id="input01"/>
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">发货情况：</label>
+                <div class="controls">
+                    <input type="radio" name="fh" class="input-xlarge" id="input01" value="1" /> 已发货
+                    <input type="radio" name="fh" class="input-xlarge" id="input01" value="0" /> 未发货
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input01">订单日期：</label>
+                <div class="controls">
+                    <input type="text" name="ddate" class="input-xlarge" id="input01"/>
+                </div>
+            </div>
+
+            </div>
+            <div class="form-actions">
+                <button type="submit" class="btn btn-primary">添加</button> <button type="reset" class="btn">重置</button>
+            </div>
+        </fieldset>
+    </form>
+{% endblock %}

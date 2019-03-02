@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% include "cwmenu.html" %}
+<h3>修改信息</h3>
+            <form action="{% url 'cwupdateusers' %}" method="post">
+            <input type="hidden" name="id" value="{{ cw.id}}"/>
+            {% csrf_token %}
+            <table width="1980" border="1">
+               <tr>
+                 <td>预算用途：</td>
+                 <td><input type="text" name="yt" value="{{ cw.yt }}"/></td>
+               </tr>
+               <tr>
+                 <td>预算部门：</td>
+                 <td><input type="text" name="bm"  value="{{ cw.bm}}"/></td>
+               </tr>
+                <tr>
+                 <td>预算费用：</td>
+                 <td><input type="text" name="ysfy"  value="{{ cw.ysfy}}"/></td>
+               </tr>
+                <tr>
+                 <td>预算人：</td>
+                 <td><input type="text" name="ysr"  value="{{ cw.ysr}}"/></td>
+               </tr>
+                <tr>
+                 <td>审批状态：</td>
+                 <td><input type="text" name="spzt"  value="{{ cw.spzt}}"/></td>
+               </tr>
+               <tr>
+                 <td colspan="2" align="center">
+                    <input type="submit" value="提交"/>
+                    <input type="reset" value="重置"/>
+                 </td>
+               </tr>
+            </table>
+            </form>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+﻿
+{% extends "index.html" %}
+
+{% block mainbody %}
+    {% include "planmennu.html" %}
+
+
+<!-- MainForm -->
+<div id="MainForm">
+<div class="form_boxA">
+<h2>生产计划</h2>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<th>序号</th>
+<th>鞋号大小</th>
+<th>鞋子种类</th>
+<th>生产负责人</th>
+<th>计划生产个数</th>
+<th>需求数量</th>
+<th>计划开工日期</th>
+<th>计划完工日期</th>
+<th>操作</th>
+</tr>
+    {% for s in stu %}
+    <tr>
+        <td>{{ s.id }}</td>
+        <td>{{ s.num }}</td>
+        <td>{{ s.goods }}</td>
+        <td>{{ s.leader }}</td>
+        <td>{{ s.amount }}</td>
+        <td>{{ s.need }}</td>
+        <td>{{ s.kdate }}</td>
+        <td>{{ s.wdate }}</td>
+        <td>
+            <a href="{% url 'planeditusers' s.id %}">编辑</a>
+            <a href="{% url 'plandelusers' s.id%}">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+
+</table>
+
+</div>
+</div>
+<!-- /MainForm -->
+
+{% endblock %}

@@ -1,0 +1,44 @@
+
+{% extends "index.html" %}
+
+{% block mainbody %}
+    {% include "zjmenu.html" %}
+
+
+<!-- MainForm -->
+<div id="MainForm">
+<div class="form_boxA">
+<h2>资金调动审批</h2>
+<table cellpadding="0" cellspacing="0">
+<tr>
+<th>审批序号</th>
+<th>资金用途</th>
+<th>申请人</th>
+<th>所属部门</th>
+<th>申请日期</th>
+<th>是否同意</th>
+<th>操作</th>
+</tr>
+    {% for s in zj %}
+    <tr>
+        <td>{{ s.id }}</td>
+        <td>{{ s.ddqx }}</td>
+        <td>{{ s.sqr }}</td>
+        <td>{{ s.ssbm }}</td>
+        <td>{{ s.sqrq }}</td>
+        <td>{{ s.sfty }}</td>
+        <td>
+            <a href="{% url 'zjeditusers' s.id %}">编辑</a>
+            <a href="{% url 'zjdelusers' s.id%}">删除</a>
+        </td>
+    </tr>
+    {% endfor %}
+
+
+</table>
+
+</div>
+</div>
+<!-- /MainForm -->
+
+{% endblock %}
